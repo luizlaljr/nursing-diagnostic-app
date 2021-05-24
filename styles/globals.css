@@ -1,9 +1,20 @@
-html,
-body {
-  padding: 0;
+:root {
+  --primary-color: #E31722;
+  --secundary-color: #C1090A;
+  --red-gradient: linear-gradient(180deg, #D8322E 0%, #ce0c16 62.66%, #C1090A 100%);
+  --white-color: #fff;
+  --gray-color: #aaa;
+  --font-logo: 'Cinzel';
+  --std-font: 'Roboto';
+}
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  color: var(--white-color);
+  font-family: var(--std-font);
 }
 
 a {
@@ -11,6 +22,10 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+#__next {
+  width: 100vw;
+}
+
+html, body {
+  font-size: 12px;
 }
