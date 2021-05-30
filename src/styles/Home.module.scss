@@ -33,13 +33,16 @@
   font-family: var(--font-logo);
   font-weight: 100;
   margin-bottom: 3rem;
+
+  span {
+    font-weight: 800;
+    font-family: var(--font-logo);
+    color: var(--gray-color);
+  }
+  
 }
 
-.title span {
-  font-weight: 800;
-  font-family: var(--font-logo);
-  color: var(--gray-color);
-}
+
 
 .image {
   width: min(20rem, 50vw);
