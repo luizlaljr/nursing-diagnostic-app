@@ -1,0 +1,20 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--final-color);
+  height: var(--footer-heigth);
+  color: var(--white-color);
+  
+
+  .copyrigth {
+    font-size: min(2rem, 4vw);
+    color: var(--white-color);
+  }
+
+  .dev {
+    font-size: min(2rem, 4vw);
+    color: var(--white-color);
+  }
+}
