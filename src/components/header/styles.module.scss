@@ -35,12 +35,14 @@
         margin: 0 10px;
         font-size: min(2.2rem, 7.2vw);
         font-weight: bold;
+        font-family: var(--font-logo);
       }
 
       .title {
         color: var(--white-color);
         font-size: min(2.2rem, 7.2vw);
         font-weight: bold;
+        font-family: var(--font-logo);
       
         span {
           font-weight: 800;

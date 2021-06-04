@@ -4,7 +4,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  flex: 1;
+  height: 100%;
   background: var(--red-gradient);
 
   .main {
