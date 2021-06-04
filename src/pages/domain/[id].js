@@ -86,7 +86,7 @@ function pages(props) {
               background="#E31722"
               color="#FFF"
             >
-              Próximo
+              {props.domain.id === props.size ? 'Buscar' : 'Próximo'}
             </Button>
           </div>
         </div>
