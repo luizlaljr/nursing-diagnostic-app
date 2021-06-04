@@ -1,6 +1,5 @@
 .footer {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: var(--final-color);
@@ -9,12 +8,13 @@
   
 
   .copyrigth {
-    font-size: min(2rem, 4vw);
+    font-size: min(0.8rem, 3vw);
     color: var(--white-color);
+    margin-right: 10px;
   }
 
   .dev {
-    font-size: min(2rem, 4vw);
+    font-size: min(0.8rem, 3vw);
     color: var(--white-color);
   }
 }
