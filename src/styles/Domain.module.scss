@@ -1,5 +1,5 @@
 .container {
-  height: calc(100vh - var(--header-heigth) - var(--footer-heigth));
+  height: calc(90vh - var(--header-heigth) - var(--footer-heigth));
   width: 100vw;
   display: flex;
   flex-direction: column;
