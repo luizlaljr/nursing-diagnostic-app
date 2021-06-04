@@ -1,11 +1,14 @@
 :root {
   --primary-color: #E31722;
-  --secundary-color: #C1090A;
+  --initial-color: #D8322E;
+  --final-color: #C1090A;
   --red-gradient: linear-gradient(180deg, #D8322E 0%, #ce0c16 62.66%, #C1090A 100%);
   --white-color: #fff;
   --gray-color: #aaa;
   --font-logo: 'Cinzel';
   --std-font: 'Roboto';
+  --header-heigth: 5rem;
+  --footer-heigth: 3rem;
 }
 
 * {
@@ -13,7 +16,7 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
-  color: var(--white-color);
+  color: var(--primary-color);
   font-family: var(--std-font);
 }
 
@@ -27,5 +30,25 @@ a {
 }
 
 html, body {
-  font-size: 12px;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: min(6rem, 15vw);
+}
+
+h3 {
+  font-size: min(4rem, 10vw);
+}
+
+h4 {
+  font-size: min(3rem, 9vw);
+}
+
+h5 {
+  font-size: min(2.5rem, 7vw);
+}
+
+h6 {
+  font-size: min(2.2rem, 5.4vw);
 }

@@ -1,70 +1,58 @@
 .container {
-  min-height: 100vh;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: var(--red-gradient)
-}
+  background: var(--red-gradient);
 
-.main {
-  padding: 2rem 0;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+  .main {
+    padding: 2rem 0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
 
-.pre_title {
-  line-height: 1.15;
-  font-size: min(4rem, 10vw);
-  text-align: center;
-  font-family: var(--font-logo);
-  font-weight: 100;
-}
+    .pretitle {
+      line-height: 1.15;
+      text-align: center;
+      font-family: var(--font-logo);
+      font-weight: 100;
+      color: var(--white-color);
+    }
 
-.title {
-  line-height: 1.15;
-  font-size: min(6rem, 15vw);
-  text-align: center;
-  font-family: var(--font-logo);
-  font-weight: 100;
-  margin-bottom: 3rem;
+    .title {
+      line-height: 1.15;
+      text-align: center;
+      font-family: var(--font-logo);
+      font-weight: 100;
+      margin-bottom: 3rem;
+      color: var(--white-color);
 
-  span {
-    font-weight: 800;
-    font-family: var(--font-logo);
-    color: var(--gray-color);
+      span {
+        font-weight: 800;
+        font-family: var(--font-logo);
+        color: var(--gray-color);
+      } 
+    }
+
+    .image {
+      width: min(20rem, 50vw);
+      height: min(20rem, 50vw);
+    }
+
+    .subtitle {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: max(0.8rem, 1vw);
+      font-weight: bold;
+      color: var(--white-color);
+      margin-bottom: 1.6rem;
+    }
+
   }
-  
+
 }
-
-
-
-.image {
-  width: min(20rem, 50vw);
-  height: min(20rem, 50vw);
-}
-
-.subtitle {
-  margin-top: 2rem;
-  font-size: max(0.8rem, 1vw);
-  font-weight: bold;
-}
-
-.button {
-  margin-top: 4rem;
-  width: max(6rem, 8vw);
-  height: max(2rem, 2.6vw);
-  font-size: max(1.1rem, 1.5vw);
-  font-weight: bold;
-  border-radius: max(0.8rem, 0.8vw);
-  background: var(--white-color);
-  border: none;
-  color: var(--secundary-color);
-}
-
-
