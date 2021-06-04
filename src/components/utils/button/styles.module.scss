@@ -1,0 +1,12 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max(5.2rem, 6.4vw);
+  height: max(1.7rem, 2vw);
+  font-size: max(0.9rem, 1.1vw);
+  font-weight: bold;
+  border-radius: max(0.8rem, 0.8vw);
+  border: none;
+  cursor: pointer;
+}
