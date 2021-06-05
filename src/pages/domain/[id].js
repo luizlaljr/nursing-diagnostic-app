@@ -42,7 +42,7 @@ export async function getStaticProps(context) {
   }
 }
 
-function pages(props) {
+function Domain(props) {
   const handleBackButton = (id) => {
     return id === 1 ? '/' : (id - 1).toString()
   }
@@ -66,9 +66,9 @@ function pages(props) {
             <h6 className={styles.definition}>{props.domain.definition}</h6>
           </div>
           <ul className={styles.checklist}>
-            {props.domain.symptoms.map((d) => (
-              <li key={d.id} className={styles.listitem}>
-                <Checkbox domain={d}></Checkbox>
+            {props.domain.symptoms.map((symptom) => (
+              <li key={symptom.id} className={styles.listitem}>
+                <Checkbox symptom={symptom}></Checkbox>
               </li>
             ))}
           </ul>
@@ -96,4 +96,4 @@ function pages(props) {
   )
 }
 
-export default pages
+export default Domain

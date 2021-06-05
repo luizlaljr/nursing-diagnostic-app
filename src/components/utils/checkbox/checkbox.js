@@ -1,23 +1,34 @@
-import React, { useState } from 'react'
-
+import React, { useEffect, useState } from 'react'
+import { useAppContext } from '../../../context/context'
 import styles from './styles.module.scss'
 
-function Checkbox({ domain }) {
-  const [checked, setChecked] = useState(false)
+function Checkbox({ symptom }) {
+  const { symptoms, addSymptoms, removeSymptoms } = useAppContext()
+
+  const [checked, setChecked] = useState()
+
+  const toggleCheck = () => {
+    setChecked(!checked)
+    !checked ? addSymptoms(symptom.id) : removeSymptoms(symptom.id)
+  }
+
+  useEffect(() => {
+    const setCondition = () => {
+      console.log(!(symptoms.indexOf(symptom.id) === -1))
+      setChecked(!(symptoms.indexOf(symptom.id) === -1))
+    }
+    setCondition()
+  }, [])
 
   return (
-    <div
-      checked={checked}
-      onClick={() => setChecked(!checked)}
-      className={styles.checkbox}
-    >
+    <div checked={checked} onClick={toggleCheck} className={styles.checkbox}>
       <input
         type="checkbox"
         className={styles.checkbox}
-        checked={checked}
-        onChange={() => setChecked(!checked)}
+        defaultChecked={checked}
+        onChange={toggleCheck}
       />
-      <label htmlFor="chk1">{domain.name}</label>
+      <label htmlFor="chk1">{symptom.name}</label>
     </div>
   )
 }
