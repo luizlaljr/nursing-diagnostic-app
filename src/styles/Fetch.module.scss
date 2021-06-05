@@ -1,5 +1,5 @@
 .container {
-  height: calc(100% - var(--header-heigth) - var(--footer-heigth));
+  height: calc(100vh - var(--footer-heigth));
   width: 100vw;
   display: flex;
   padding-top: var(--header-heigth);
@@ -32,7 +32,8 @@
       list-style: none;
       margin-top: 10px;
       padding: 15px;
-      min-width: min(680px, 95vw);
+      width: min(1250px, 95%);
+      overflow-y: auto;
     }
 
     .listitem {

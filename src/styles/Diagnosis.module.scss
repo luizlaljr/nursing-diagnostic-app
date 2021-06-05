@@ -1,5 +1,5 @@
 .container {
-  height: calc(100% - var(--header-heigth) - var(--footer-heigth));
+  height: calc(100% - var(--footer-heigth));
   width: 100vw;
   display: flex;
   padding-top: var(--header-heigth);
