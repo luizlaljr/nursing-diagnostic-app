@@ -1,11 +1,13 @@
 .container {
   height: calc(100% - var(--header-heigth) - var(--footer-heigth));
+  padding-top: var(--header-heigth);
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: var(--white-color);
+  overflow-y: hidden;
   color: var(--primary-color); 
 
   .content {

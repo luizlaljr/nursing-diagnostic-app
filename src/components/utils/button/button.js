@@ -4,13 +4,12 @@ import styles from './styles.module.scss'
 import { useAppContext } from '../../../context/context'
 
 function button({ children, path, background, color }) {
-  const { symptoms, removeAllSymptoms } = useAppContext()
+  const { removeAllSymptoms } = useAppContext()
 
   const emptyList = () => {
     if (path === '/') {
       removeAllSymptoms()
     }
-    console.log(symptoms)
   }
 
   return (

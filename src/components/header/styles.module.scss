@@ -1,11 +1,14 @@
-.headerContainer {
+.container {
   height: var(--header-heigth);
   border-bottom: 1px solid var(--gray-color);
   background: var(--red-gradient);
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
 }
 
-.headerContent {
+.content {
   height: var(--header-heigth);
   width: 100%;
   margin: 0 auto;

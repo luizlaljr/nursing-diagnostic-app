@@ -5,8 +5,8 @@ import logo from '../../assets/logo.svg'
 
 function Header() {
   return (
-    <header className={styles.headerContainer}>
-      <div className={styles.headerContent}>
+    <header className={styles.container}>
+      <div className={styles.content}>
         <div className={styles.logo}>
           <div className={styles.image}>
             <img src={logo} alt="heart with pulse" />
