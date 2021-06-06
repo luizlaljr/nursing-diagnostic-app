@@ -49,7 +49,7 @@ function Diagnosis(props) {
       <Header />
       <main className={styles.container}>
         <div className={styles.content}>
-          <div className={styles.info}>
+          <div className={styles.title}>
             <label className={styles.label}>Diagnóstico:</label>
             <div className={styles.definition}>{props.name}</div>
           </div>

@@ -19,8 +19,9 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    overflow-y: auto;
 
-    .info {
+    .title {
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -29,11 +30,32 @@
       .label {
         font-weight: bold;
         margin-right: 10px;
-        font-size: max(1.8rem, 1.1vw);
+        font-size: max(0.86rem, 1.9vw);
       }
 
       .definition {
-        font-size: max(1.4rem, 0.9vw);
+        font-size: max(0.76rem, 1.8vw);
+        text-shadow: 2px 2px 2px #ddd;
+        border-bottom: 1px solid var(--initial-color);
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-bottom: 20px;
+
+      .label {
+        font-weight: bold;
+        margin-right: 10px;
+        font-size: max(0.86rem, 1.8vw);
+        margin-bottom: 5px;
+      }
+
+      .definition {
+        font-size: max(0.78rem, 1.6vw);
       }
     }
 
