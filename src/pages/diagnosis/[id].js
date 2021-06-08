@@ -51,20 +51,24 @@ function Diagnosis(props) {
         <div className={styles.content}>
           <div className={styles.title}>
             <label className={styles.label}>Diagnóstico:</label>
-            <div className={styles.definition}>{props.name}</div>
+            <div className={styles.definition}>
+              {props.name} ({props.code})
+            </div>
           </div>
           <div className={styles.info}>
-            <label className={styles.label}>Definição:</label>
-            <div className={styles.definition}>{props.definition}</div>
+            <div className={styles.definition}>
+              <label className={styles.label}>Definição:</label>
+              {props.definition}
+            </div>
           </div>
           <div className={styles.info}>
-            <label className={styles.label}>CD:</label>
+            <label className={styles.label}>Características Definidoras:</label>
             <div className={styles.definition}>
               {props.symptoms.map((symptoms) => `${symptoms.name}; `)}
             </div>
           </div>
           <div className={styles.info}>
-            <label className={styles.label}>FR:</label>
+            <label className={styles.label}>Fatores Relacionados:</label>
             <div className={styles.definition}>{props.causes}</div>
           </div>
           <button
