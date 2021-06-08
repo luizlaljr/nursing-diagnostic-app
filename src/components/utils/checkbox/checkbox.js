@@ -14,7 +14,6 @@ function Checkbox({ symptom }) {
 
   useEffect(() => {
     const setCondition = () => {
-      console.log(!(symptoms.indexOf(symptom.id) === -1))
       setChecked(!(symptoms.indexOf(symptom.id) === -1))
     }
     setCondition()
