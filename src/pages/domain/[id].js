@@ -62,8 +62,6 @@ function Domain(props) {
   }
 
   const handleNextButton = (id) => {
-    console.log(id)
-    console.log(props.domains.length)
     return id < props.domains.length ? (id + 1).toString() : handleFetch()
   }
 
