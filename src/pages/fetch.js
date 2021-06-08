@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
 import Header from '../components/header/index'
 import Footer from '../components/footer/index'
@@ -20,6 +20,12 @@ export async function getServerSideProps(context) {
 }
 
 function Fetch(props) {
+  const [show, setShow] = useState(false)
+
+  const handleDisplay = () => {
+    setShow(!show)
+  }
+
   const handlePath = (id) => {
     return `/diagnosis/${id}`
   }
@@ -44,17 +50,27 @@ function Fetch(props) {
             {props.diagnostics.map((diagnosis) => (
               <li key={diagnosis.id} className={styles.listitem}>
                 <Link href={handlePath(diagnosis.id)}>
-                  <>
-                    {diagnosis.name}
-                    <div className={styles.symptoms}>
-                      {diagnosis.related.map((symptom) => (
-                        <div key={symptom.name} className={styles.symptom}>
-                          {symptom.name}
-                        </div>
-                      ))}
-                    </div>
-                  </>
+                  <a>
+                    {diagnosis.name} <i className="fas fa-search"></i>
+                  </a>
                 </Link>
+                <div
+                  className={styles.symptoms}
+                  style={{ display: !show ? 'block' : 'none' }}
+                >
+                  {diagnosis.related.map((symptom) => (
+                    <div key={symptom.name} className={styles.symptom}>
+                      - {symptom.name}
+                    </div>
+                  ))}
+                </div>
+                <div onClick={handleDisplay}>
+                  {show ? (
+                    <i className="fas fa-angle-down"></i>
+                  ) : (
+                    <i className="fas fa-angle-up"></i>
+                  )}
+                </div>
               </li>
             ))}
           </ul>

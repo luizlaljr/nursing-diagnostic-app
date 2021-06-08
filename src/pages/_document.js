@@ -20,6 +20,10 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto&display=swap"
             rel="stylesheet"
           />
+          <script
+            src="https://kit.fontawesome.com/e137173c18.js"
+            crossOrigin="anonymous"
+          ></script>
         </Head>
         <body>
           <Main />
