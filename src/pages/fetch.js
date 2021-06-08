@@ -56,7 +56,7 @@ function Fetch(props) {
                 </Link>
                 <div
                   className={styles.symptoms}
-                  style={{ display: !show ? 'block' : 'none' }}
+                  style={{ display: show ? 'block' : 'none' }}
                 >
                   {diagnosis.related.map((symptom) => (
                     <div key={symptom.name} className={styles.symptom}>
