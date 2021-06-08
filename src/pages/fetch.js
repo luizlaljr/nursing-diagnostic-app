@@ -66,9 +66,9 @@ function Fetch(props) {
                 </div>
                 <div onClick={handleDisplay}>
                   {show ? (
-                    <i className="fas fa-angle-down"></i>
-                  ) : (
                     <i className="fas fa-angle-up"></i>
+                  ) : (
+                    <i className="fas fa-angle-down"></i>
                   )}
                 </div>
               </li>
