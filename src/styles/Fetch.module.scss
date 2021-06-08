@@ -40,18 +40,27 @@
       margin-bottom: min(50px, 3vw);
       font-size: min(1.4rem, 3.3vw);
       text-align: center;
-      padding: 0px 20px min(20px, 2vw);
+      padding: 0px 20px min(5px, 0.5vw);
       border-bottom: 2px solid var(--primary-color);
       border-radius: 10px;
       text-shadow: 3px 3px 2px #bbb;
-      cursor: pointer;
+
+      i {
+        color: #777;
+        opacity: .4;
+      }
 
       .symptoms {
         justify-content: center;
+        border-radius: 20px;
+        padding: 5px;
+        background-color: #efefef;
         
         .symptom {
           margin-right: 5px;
           font-size: min(1.1rem, 2.9vw);
+          text-shadow: none;
+          padding: 3px;
         }
       }
     }

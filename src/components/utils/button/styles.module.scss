@@ -9,4 +9,8 @@
   border-radius: max(0.8rem, 0.8vw);
   border: 1px solid var(--primary-color);
   cursor: pointer;
+
+  &:hover {
+    opacity: .85;
+  }
 }

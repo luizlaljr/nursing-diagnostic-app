@@ -102,16 +102,16 @@ function Domain(props) {
           <div className={styles.buttons}>
             <Button
               path={handleBackButton(props.domain.id)}
-              background="#f3d5d5"
-              color="#D8322E"
+              background="#FFF"
+              color="#514F5A"
             >
               Voltar
             </Button>
             {props.domain.id !== props.domains.length ? (
               <Button
                 path={handleNextButton(props.domain.id)}
-                background="#f3d5d5"
-                color="#D8322E"
+                background="#FFF"
+                color="#514F5A"
               >
                 Próximo
               </Button>
