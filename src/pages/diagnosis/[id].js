@@ -6,6 +6,8 @@ import Footer from '../../components/footer/index'
 import styles from '../../styles/Diagnosis.module.scss'
 import api from '../../services/api/api'
 
+import { useAppContext } from '../../context/context'
+
 export async function getStaticPaths() {
   const response = await api.get('diagnosis')
 
@@ -36,6 +38,8 @@ export async function getStaticProps(context) {
 
 function Diagnosis(props) {
   const router = useRouter()
+  const { symptoms } = useAppContext()
+
   return (
     <>
       <Head>
@@ -64,7 +68,14 @@ function Diagnosis(props) {
           <div className={styles.info}>
             <label className={styles.label}>Características Definidoras:</label>
             <div className={styles.definition}>
-              {props.symptoms.map((symptoms) => `${symptoms.name}; `)}
+              {props.symptoms.map((symptom) => (
+                <div
+                  key={symptom.id}
+                  className={symptoms.indexOf(symptom.id) !== -1 ? styles.bold : ''}
+                >
+                  {symptom.name};
+                </div>
+              ))}
             </div>
           </div>
           <div className={styles.info}>

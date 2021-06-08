@@ -20,6 +20,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     overflow-y: auto;
+    margin-bottom: 15px;
 
     .title {
       display: flex;
@@ -57,7 +58,15 @@
       }
 
       .definition {
+        display: block;
+        width: 100%;
         font-size: max(0.78rem, 1.6vw);
+
+        .bold {
+          font-weight: bold;
+          background-color: #ececec;
+          font-size: max(0.8rem, 1.7vw);
+        }
       }
     }
 
