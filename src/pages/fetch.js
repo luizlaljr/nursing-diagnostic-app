@@ -43,7 +43,18 @@ function Fetch(props) {
           <ul className={styles.list}>
             {props.diagnostics.map((diagnosis) => (
               <li key={diagnosis.id} className={styles.listitem}>
-                <Link href={handlePath(diagnosis.id)}>{diagnosis.name}</Link>
+                <Link href={handlePath(diagnosis.id)}>
+                  <>
+                    {diagnosis.name}
+                    <div className={styles.symptoms}>
+                      {diagnosis.related.map((symptom) => (
+                        <div key={symptom.id} className={styles.symptom}>
+                          {symptom.name}
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                </Link>
               </li>
             ))}
           </ul>

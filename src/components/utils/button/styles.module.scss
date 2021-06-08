@@ -7,6 +7,6 @@
   font-size: max(0.9rem, 1.1vw);
   font-weight: bold;
   border-radius: max(0.8rem, 0.8vw);
-  border: none;
+  border: 1px solid var(--primary-color);
   cursor: pointer;
 }

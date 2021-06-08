@@ -62,6 +62,8 @@ function Domain(props) {
   }
 
   const handleNextButton = (id) => {
+    console.log(id)
+    console.log(props.domains.length)
     return id < props.domains.length ? (id + 1).toString() : handleFetch()
   }
 
@@ -102,18 +104,28 @@ function Domain(props) {
           <div className={styles.buttons}>
             <Button
               path={handleBackButton(props.domain.id)}
-              background="#E31722"
-              color="#FFF"
+              background="#f3d5d5"
+              color="#D8322E"
             >
               Voltar
             </Button>
-            <Button
-              path={handleNextButton(props.domain.id)}
-              background="#E31722"
-              color="#FFF"
-            >
-              {props.domain.id === props.size ? 'Buscar' : 'Próximo'}
-            </Button>
+            {props.domain.id !== props.domains.length ? (
+              <Button
+                path={handleNextButton(props.domain.id)}
+                background="#f3d5d5"
+                color="#D8322E"
+              >
+                Próximo
+              </Button>
+            ) : (
+              <Button
+                path={handleNextButton(props.domain.id)}
+                background="#E31722"
+                color="#FFF"
+              >
+                Buscar
+              </Button>
+            )}
           </div>
         </div>
       </main>

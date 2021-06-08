@@ -40,11 +40,31 @@
       margin-bottom: min(50px, 5vw);
       font-size: min(1.4rem, 3.3vw);
       text-align: center;
-      padding: 0px 20px 20px;
+      padding: 0px 20px min(20px, 2vw);
       border-bottom: 2px solid var(--primary-color);
       border-radius: 10px;
       text-shadow: 3px 3px 2px #bbb;
       cursor: pointer;
+
+      .symptoms {
+        display: flex;
+        justify-content: center;
+
+        &::before{
+          content: "(";
+          font-size: min(1.1rem, 2.9vw);
+        }
+
+        &::after{
+          content: ")";
+          font-size: min(1.1rem, 2.9vw);
+        }
+        
+        .symptom {
+          margin-right: 5px;
+          font-size: min(1.1rem, 2.9vw);
+        }
+      }
     }
   }
 }
