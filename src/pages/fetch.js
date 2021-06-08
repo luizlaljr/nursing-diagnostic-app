@@ -48,7 +48,7 @@ function Fetch(props) {
                     {diagnosis.name}
                     <div className={styles.symptoms}>
                       {diagnosis.related.map((symptom) => (
-                        <div key={symptom.id} className={styles.symptom}>
+                        <div key={symptom.name} className={styles.symptom}>
                           {symptom.name}
                         </div>
                       ))}

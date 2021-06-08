@@ -37,7 +37,7 @@
     }
 
     .listitem {
-      margin-bottom: min(50px, 5vw);
+      margin-bottom: min(50px, 3vw);
       font-size: min(1.4rem, 3.3vw);
       text-align: center;
       padding: 0px 20px min(20px, 2vw);
@@ -47,18 +47,7 @@
       cursor: pointer;
 
       .symptoms {
-        display: flex;
         justify-content: center;
-
-        &::before{
-          content: "(";
-          font-size: min(1.1rem, 2.9vw);
-        }
-
-        &::after{
-          content: ")";
-          font-size: min(1.1rem, 2.9vw);
-        }
         
         .symptom {
           margin-right: 5px;
