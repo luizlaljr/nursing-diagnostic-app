@@ -5,6 +5,7 @@
   --red-gradient: linear-gradient(180deg, #D8322E 0%, #ce0c16 62.66%, #C1090A 100%);
   --white-color: #fff;
   --gray-color: #aaa;
+  --font-color: rgb(81, 79, 90);
   --font-logo: 'Cinzel';
   --std-font: 'Roboto';
   --header-heigth: 5rem;
@@ -16,7 +17,7 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
-  color: var(--primary-color);
+  color: var(--font-color);
   font-family: var(--std-font);
 }
 
