@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Header from '../../components/header/index'
+import Breadcrumb from '../../components/utils/breadcrumb/stepNavigation'
 import Checkbox from '../../components/utils/checkbox/checkbox'
 import Button from '../../components/utils/button/button'
 import Footer from '../../components/footer/index'
@@ -31,12 +32,11 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const id = context.params.id
   const { data: domain } = await api.get(`domain/${id}`)
-  const { data: ids } = await api.get('domain')
-  const size = ids.length
+  const { data: domains } = await api.get('domain')
 
   const response = {
     domain,
-    size,
+    domains,
   }
   return {
     props: response,
@@ -62,7 +62,7 @@ function Domain(props) {
   }
 
   const handleNextButton = (id) => {
-    return id < props.size ? (id + 1).toString() : handleFetch()
+    return id < props.domains.length ? (id + 1).toString() : handleFetch()
   }
 
   return (
@@ -78,9 +78,18 @@ function Domain(props) {
       <Header />
       <main className={styles.container}>
         <div className={styles.content}>
+          <div className={styles.breadcrumb}>
+            <Breadcrumb currentyID={props.domain.id} domains={props.domains} />
+          </div>
           <div className={styles.header}>
             <h5 className={styles.name}>{props.domain.name}</h5>
             <h6 className={styles.definition}>{props.domain.definition}</h6>
+          </div>
+          <div className={styles.info}>
+            <p className={styles.definition}>
+              <strong>Definição: </strong>
+              {props.domain.abstract}
+            </p>
           </div>
           <ul className={styles.checklist}>
             {props.domain.symptoms.map((symptom) => (
