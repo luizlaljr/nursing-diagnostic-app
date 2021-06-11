@@ -1,0 +1,53 @@
+.menuToggle {
+  display: none;
+}
+
+@media (max-width: 740px) {
+  .menuToggle{
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    top: 20px;
+    right: 20px;
+    z-index: 20;
+
+    .one,
+    .two,
+    .three {
+      background-color: #FFF;
+      border-radius: 10px;
+      height: 5px;
+      width: 100%;
+      margin: 6px auto;
+      transform-origin: 1px;
+      transition: all 0.3s linear;
+    }
+
+    .toggleOpen {
+      .one {
+        transform: rotate(45deg) translate(0px, 0px);
+      }
+      .two {
+        opacity: 0;
+      }
+      .three {
+        transform: rotate(-45deg) translate(-3px, 3px);
+      }
+    }
+
+    .toggleClose {
+      .one {
+        transform: rotate(0deg) ;
+      }
+      .two {
+        opacity: 1;
+      }
+      .three {
+        transform: rotate(0deg) ;
+      }
+    }
+
+
+  }
+}

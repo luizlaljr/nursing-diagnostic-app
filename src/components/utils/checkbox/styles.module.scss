@@ -17,6 +17,7 @@
   padding-left: 2.2em;
   display: inline-block;
   font-size: min(1.6rem, 3.6vw);
+  z-index: 0;
 }
 .checkbox label::before {
   content: "";

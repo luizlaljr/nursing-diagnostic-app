@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './styles.module.scss'
+import Menu from '../menu/index'
 
 import logo from '../../assets/logo.svg'
 
@@ -18,13 +19,7 @@ function Header() {
             </div>
           </div>
         </div>
-        <nav>
-          <a href="/">Início</a>
-          <a className={styles.actived} href="">
-            Domínios
-          </a>
-          <a href="">Sobre</a>
-        </nav>
+        <Menu />
       </div>
     </header>
   )
