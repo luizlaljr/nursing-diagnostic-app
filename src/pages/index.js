@@ -2,8 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Button from '../components/utils/button/button'
 import styles from '../styles/Home.module.scss'
-
-import logo from '../assets/logo.svg'
+import LottieComponent from '../components/lottie/index'
 
 export default function Home() {
   return (
@@ -22,9 +21,7 @@ export default function Home() {
           <h1 className={styles.title}>
             Diagnos<span>IC</span>
           </h1>
-          <div className={styles.image}>
-            <img src={logo} alt="heart with pulse" />
-          </div>
+          <LottieComponent />
           <p className={styles.subtitle}>
             DIAGNÓSTICOS DE ENFERMAGENS EM INSUFICIÊNCIA CARDÍACA
           </p>
