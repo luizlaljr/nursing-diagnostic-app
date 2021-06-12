@@ -21,6 +21,7 @@ function Breadcrumb({ domains, currentyID }) {
     <div className={styles.stepWrapper}>
       {domains.map((item, index) => (
         <Step
+          on={index + 1 < currentyID}
           key={index}
           index={index}
           path={index + 1}

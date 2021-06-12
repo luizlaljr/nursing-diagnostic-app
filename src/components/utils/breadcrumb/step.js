@@ -2,10 +2,10 @@ import React from 'react'
 import Link from 'next/link'
 import styles from './step.module.scss'
 
-function Step({ index, color, path }) {
+function Step({ on, index, color, path }) {
   return (
     <div className={styles.stepBlock}>
-      <div className={styles.circleWrapper}>
+      <div className={on ? styles.circleWrapperOn : styles.circleWrapper}>
         <Link href={`${path.toString()}`}>
           <a>
             <div
