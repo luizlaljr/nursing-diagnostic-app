@@ -19,7 +19,7 @@ function menu() {
         <a className={styles.actived} href="">
           Domínios
         </a>
-        <a href="">Sobre</a>
+        <a href="/about">Sobre</a>
       </nav>
       <Hamburguer onClick={handleClick} open={open} />
     </div>

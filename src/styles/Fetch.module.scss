@@ -43,11 +43,12 @@
       padding: 0px 20px min(5px, 0.5vw);
       border-bottom: 2px solid var(--primary-color);
       border-radius: 10px;
-      text-shadow: 3px 3px 2px #bbb;
+      text-shadow: 2px 2px 2px #bbb;
 
       i {
         color: #777;
         opacity: .4;
+        text-shadow: none;
       }
 
       .symptoms {

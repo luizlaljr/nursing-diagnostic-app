@@ -56,3 +56,11 @@
     }
   }
 }
+
+@media (max-width: 780px) {
+  .logo {
+    display: flex;
+    align-items: center;
+    width: 85%;
+  }
+}
