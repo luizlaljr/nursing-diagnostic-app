@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import { useRouter } from 'next/router'
 import Hamburguer from '../utils/hamburguer/hamburguer'
 import styles from './styles.module.scss'
 
 function menu() {
   const [open, setOpen] = useState(false)
+
+  const { asPath } = useRouter()
 
   const handleClick = () => {
     setOpen(!open)
@@ -15,11 +18,15 @@ function menu() {
         className={open ? styles.menuSectionOpen : styles.menuSectionClosed}
       ></div>
       <nav className={!open ? styles.nav : styles.navOn}>
-        <a href="/">Início</a>
-        <a className={styles.actived} href="">
+        <a className={asPath === '/' ? styles.actived : ''} href="/">
+          Início
+        </a>
+        <a className={asPath !== '/about' ? styles.actived : ''} href="/domain/1">
           Domínios
         </a>
-        <a href="/about">Sobre</a>
+        <a className={asPath === '/about' ? styles.actived : ''} href="/about">
+          Sobre
+        </a>
       </nav>
       <Hamburguer onClick={handleClick} open={open} />
     </div>
