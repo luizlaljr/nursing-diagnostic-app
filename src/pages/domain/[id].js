@@ -106,6 +106,7 @@ function Domain(props) {
 
           <div className={styles.buttons}>
             <Button
+              click={null}
               path={handleBackButton(props.domain.id)}
               background="#FFF"
               color="#514F5A"
@@ -114,6 +115,7 @@ function Domain(props) {
             </Button>
             {props.domain.id !== props.domains.length ? (
               <Button
+                click={null}
                 path={handleNextButton(props.domain.id)}
                 background="#FFF"
                 color="#514F5A"

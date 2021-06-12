@@ -7,7 +7,7 @@ function button({ children, click, path, background, color }) {
   const { removeAllSymptoms } = useAppContext()
 
   const emptyList = () => {
-    click()
+    click !== null && click()
     if (path === '/') {
       removeAllSymptoms()
     }
