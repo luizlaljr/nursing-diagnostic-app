@@ -3,10 +3,11 @@ import Link from 'next/link'
 import styles from './styles.module.scss'
 import { useAppContext } from '../../../context/context'
 
-function button({ children, path, background, color }) {
+function button({ children, click, path, background, color }) {
   const { removeAllSymptoms } = useAppContext()
 
   const emptyList = () => {
+    click()
     if (path === '/') {
       removeAllSymptoms()
     }

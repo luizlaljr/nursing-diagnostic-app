@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
 import Header from '../../components/header/index'
 import Breadcrumb from '../../components/utils/breadcrumb/stepNavigation'
@@ -6,7 +6,7 @@ import Checkbox from '../../components/utils/checkbox/checkbox'
 import Button from '../../components/utils/button/button'
 import Footer from '../../components/footer/index'
 import styles from '../../styles/Domain.module.scss'
-
+import LottieComponent from '../../components/lottie/index'
 import api from '../../services/api/api'
 import { useAppContext } from '../../context/context'
 
@@ -44,7 +44,12 @@ export async function getStaticProps(context) {
 }
 
 function Domain(props) {
+  const [loading, setLoading] = useState(false)
   const { symptoms } = useAppContext()
+
+  const handleLoading = () => {
+    setLoading(true)
+  }
 
   const handleFetch = () => {
     let ids = '/fetch?id='
@@ -64,7 +69,7 @@ function Domain(props) {
   const handleNextButton = (id) => {
     return id < props.domains.length ? (id + 1).toString() : handleFetch()
   }
-
+  if (loading) return <LottieComponent />
   return (
     <>
       <Head>
@@ -117,6 +122,7 @@ function Domain(props) {
               </Button>
             ) : (
               <Button
+                click={handleLoading}
                 path={handleNextButton(props.domain.id)}
                 background="#E31722"
                 color="#FFF"
