@@ -22,7 +22,7 @@ function menu() {
           Início
         </a>
         <a className={asPath !== '/about' ? styles.actived : ''} href="/domain/1">
-          Domínios
+          Raciocínio DiagnosIC
         </a>
         <a className={asPath === '/about' ? styles.actived : ''} href="/about">
           Sobre
