@@ -45,8 +45,8 @@ function pages() {
             <h6>DESENVOLVEDORES</h6>
           </div>
           <ul>
-            <li>Gisely (sobrenome) (Instituto de computação/UFF)</li>
-            <li>Luiz (sobrenome) (Instituto de computação/UFF)</li>
+            <li>Gisely Barbosa (Instituto de computação/UFF)</li>
+            <li>Luiz Alberto Alves de Brito Junior (Instituto de computação/UFF)</li>
           </ul>
           <button
             type="button"
