@@ -41,14 +41,23 @@
 
     .info {
       align-self: flex-start;
-      margin-left: 25px;
+      margin: 0 25px;
       display: flex;
+      flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
 
       .definition {
+        text-align: justify;
         font-size: max(0.94rem, 1.6vw);
+        margin-bottom: 20px;
+      }
+
+      .text {
+        text-align: justify;
+        text-indent: 20px;
+        font-size: max(0.74rem, 1.3vw);
       }
     }
 

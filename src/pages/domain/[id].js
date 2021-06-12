@@ -95,6 +95,9 @@ function Domain(props) {
               <strong>Definição: </strong>
               {props.domain.abstract}
             </p>
+            <p className={styles.text}>
+              Selecione abaixo as características definidoras encontradas:
+            </p>
           </div>
           <ul className={styles.checklist}>
             {props.domain.symptoms.map((symptom) => (
