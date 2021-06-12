@@ -25,4 +25,13 @@
       height: 100%;
     }
   }
+
+  .subtitle {
+    position: relative;
+    text-align: center;
+    margin-top: 25rem;
+    font-size: max(1.0rem, 1.3vw);
+    font-weight: bold;
+    color: var(--white-color);
+  }
 }
