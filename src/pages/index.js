@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Nursing DiagnostIC</title>
+        <title>Nursing DiagnosIC</title>
         <meta
           name="description"
           content="Aplicativo de auxílio ao diagnóstico de enfermagem cardíaca"
