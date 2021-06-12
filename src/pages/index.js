@@ -2,7 +2,8 @@ import React from 'react'
 import Head from 'next/head'
 import Button from '../components/utils/button/button'
 import styles from '../styles/Home.module.scss'
-import LottieComponent from '../components/lottie/index'
+
+import logo from '../assets/logo.svg'
 
 export default function Home() {
   return (
@@ -21,11 +22,13 @@ export default function Home() {
           <h1 className={styles.title}>
             Diagnos<span>IC</span>
           </h1>
-          <LottieComponent />
+          <div className={styles.image}>
+            <img src={logo} alt="heart with pulse" />
+          </div>
           <p className={styles.subtitle}>
             DIAGNÓSTICOS DE ENFERMAGENS EM INSUFICIÊNCIA CARDÍACA
           </p>
-          <Button path="domain/1" background="#FFF" color="#C1090">
+          <Button click={null} path="domain/1" background="#FFF" color="#C1090">
             Começar
           </Button>
         </main>
