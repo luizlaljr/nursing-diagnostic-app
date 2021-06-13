@@ -21,7 +21,7 @@ function menu() {
         <a className={asPath === '/' ? styles.actived : ''} href="/">
           Início
         </a>
-        <a className={asPath !== '/about' ? styles.actived : ''} href="/domain/1">
+        <a className={asPath !== '/about' ? styles.actived : ''} href="/begin">
           Raciocínio Clínico
         </a>
         <a className={asPath === '/about' ? styles.actived : ''} href="/about">

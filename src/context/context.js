@@ -8,6 +8,7 @@ function useAppContext() {
 
 const ContextProvider = ({ children }) => {
   const [symptoms, setSymptoms] = useState([])
+  const [rules, setRules] = useState(new Set())
 
   const addSymptoms = (symptom) => {
     const symptomsList = [...symptoms]
@@ -23,6 +24,15 @@ const ContextProvider = ({ children }) => {
     setSymptoms([])
   }
 
+  const addRules = (rule) => {
+    setRules((state) => new Set(state.add(rule)))
+  }
+
+  const removeRules = (ruleId) => {
+    const newRules = [...rules].filter((x) => x !== ruleId)
+    setRules(new Set(newRules))
+  }
+
   return (
     <Context.Provider
       value={{
@@ -30,6 +40,9 @@ const ContextProvider = ({ children }) => {
         addSymptoms,
         removeSymptoms,
         removeAllSymptoms,
+        rules,
+        addRules,
+        removeRules,
       }}
     >
       {children}

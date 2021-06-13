@@ -28,7 +28,7 @@ export default function Home() {
           <p className={styles.subtitle}>
             DIAGNÓSTICOS DE ENFERMAGENS EM INSUFICIÊNCIA CARDÍACA
           </p>
-          <Button click={null} path="domain/1" background="#FFF" color="#C1090">
+          <Button click={null} path="begin" background="#FFF" color="#C1090">
             Começar
           </Button>
         </main>

@@ -63,7 +63,7 @@ function Domain(props) {
   }
 
   const handleBackButton = (id) => {
-    return id === 1 ? '/' : (id - 1).toString()
+    return id === 1 ? '/begin' : (id - 1).toString()
   }
 
   const handleNextButton = (id) => {
@@ -113,6 +113,7 @@ function Domain(props) {
               path={handleBackButton(props.domain.id)}
               background="#FFF"
               color="#514F5A"
+              borderColor="#E31722"
             >
               Voltar
             </Button>
@@ -122,6 +123,7 @@ function Domain(props) {
                 path={handleNextButton(props.domain.id)}
                 background="#FFF"
                 color="#514F5A"
+                borderColor="#E31722"
               >
                 Próximo
               </Button>
@@ -131,6 +133,7 @@ function Domain(props) {
                 path={handleNextButton(props.domain.id)}
                 background="#E31722"
                 color="#FFF"
+                borderColor="#E31722"
               >
                 Buscar
               </Button>
