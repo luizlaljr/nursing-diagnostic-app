@@ -5,7 +5,7 @@ import Header from '../components/header/index'
 import Footer from '../components/footer/index'
 import styles from '../styles/About.module.scss'
 
-function pages() {
+function About() {
   const router = useRouter()
   return (
     <>
@@ -62,4 +62,4 @@ function pages() {
   )
 }
 
-export default pages
+export default About
