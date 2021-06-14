@@ -87,8 +87,7 @@ function Domain(props) {
             <Breadcrumb currentyID={props.domain.id} domains={props.domains} />
           </div>
           <div className={styles.header}>
-            <h5 className={styles.name}>{props.domain.name}</h5>
-            <h6 className={styles.definition}>{props.domain.definition}</h6>
+            <h5 className={styles.definition}>{props.domain.definition}</h5>
           </div>
           <div className={styles.info}>
             <p className={styles.definition}>
