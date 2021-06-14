@@ -69,7 +69,7 @@ function Domain(props) {
   const handleNextButton = (id) => {
     return id < props.domains.length ? (id + 1).toString() : handleFetch()
   }
-  if (loading) return <LottieComponent text="Carregando possíveis diagnósticos..." />
+  if (loading) return <LottieComponent />
   return (
     <>
       <Head>
