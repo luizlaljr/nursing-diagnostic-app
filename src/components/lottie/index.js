@@ -4,7 +4,7 @@ import styles from './styles.module.scss'
 import animationData from '../../assets/heartbeat.json'
 import heart from '../../assets/heart.svg'
 
-function Lottie() {
+function Lottie({ text }) {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -22,7 +22,7 @@ function Lottie() {
           <LottieAnimation options={defaultOptions} height={140} width={140} />
         </div>
       </div>
-      <p className={styles.subtitle}>Carregando possíveis diagnósticos...</p>
+      <p className={styles.subtitle}>{text}</p>
     </div>
   )
 }
