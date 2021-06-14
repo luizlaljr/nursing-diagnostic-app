@@ -131,6 +131,21 @@
       justify-content: space-evenly;
       align-items: flex-start;
       margin-top: 0.8rem;
+
+      .noLink {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: max(5.2rem, 6.4vw);
+        height: max(1.7rem, 2vw);
+        font-size: max(0.9rem, 1.1vw);
+        font-weight: bold;
+        border-radius: max(0.8rem, 0.8vw);
+        border: 1px solid;
+        background:#aaa;
+        color:#FFF;
+        border-color:#888;
+      }
     }
   }
 }
