@@ -21,7 +21,6 @@ function Begin(props) {
   const { rules } = useAppContext()
 
   const handleStart = () => {
-    console.log(rules.size === 4)
     setStart(rules.size === 4)
   }
 
@@ -76,15 +75,7 @@ function Begin(props) {
                 Continuar
               </Button>
             ) : (
-              <Button
-                click={null}
-                path="/domain/1"
-                background="#aaa"
-                color="#FFF"
-                borderColor="#888"
-              >
-                Continuar
-              </Button>
+              <div className={styles.noLink}>Continuar</div>
             )}
           </div>
         </div>
