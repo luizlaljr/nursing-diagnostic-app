@@ -30,7 +30,7 @@ export default function Home() {
           </p>
           <Button
             click={null}
-            path="begin"
+            path="/begin"
             background="#FFF"
             color="#C1090"
             borderColor="#E31722"
