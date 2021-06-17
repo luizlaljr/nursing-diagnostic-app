@@ -48,6 +48,16 @@ function About() {
             <li>Gisely Barbosa (Instituto de computação/UFF)</li>
             <li>Luiz Alberto Alves de Brito Junior (Instituto de computação/UFF)</li>
           </ul>
+          <div className={styles.subtitle}>
+            <h6>AVALIE-NOS</h6>
+          </div>
+          <p>
+            https://docs.google.com/forms/d/1S7lxTiMqoqC5T6oqVedsiK_o3HKBiCpLLWHOM1hUCf4/edit?usp=sharing
+          </p>
+          <div className={styles.subtitle}>
+            <h6>CONTATO</h6>
+          </div>
+          <a href="mailto:alyneborges@id.uff.br">alyneborges@id.uff.br</a>
           <button
             type="button"
             className={styles.button}
