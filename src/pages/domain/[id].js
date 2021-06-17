@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Header from '../../components/header/index'
 import Breadcrumb from '../../components/utils/breadcrumb/stepNavigation'
@@ -9,6 +9,8 @@ import styles from '../../styles/Domain.module.scss'
 import LottieComponent from '../../components/lottie/index'
 import api from '../../services/api/api'
 import { useAppContext } from '../../context/context'
+
+import * as ga from '../../lib/ga'
 
 export async function getStaticPaths() {
   const response = await api.get('domain')
@@ -46,8 +48,10 @@ export async function getStaticProps(context) {
 function Domain(props) {
   const [loading, setLoading] = useState(false)
   const { symptoms } = useAppContext()
+  const [fetchParams, setFetchParams] = useState('')
 
   const handleLoading = () => {
+    fetch()
     setLoading(true)
   }
 
@@ -69,6 +73,20 @@ function Domain(props) {
   const handleNextButton = (id) => {
     return id < props.domains.length ? (id + 1).toString() : handleFetch()
   }
+
+  useEffect(() => {
+    setFetchParams(symptoms)
+  }, [symptoms])
+
+  const fetch = () => {
+    ga.event({
+      action: 'fetch',
+      params: {
+        search_term: fetchParams,
+      },
+    })
+  }
+
   if (loading) return <LottieComponent />
   return (
     <>

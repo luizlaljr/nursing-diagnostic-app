@@ -4,6 +4,8 @@ import { ContextProvider } from '../context/context'
 import LottieComponent from '../components/lottie/index'
 import '../styles/globals.scss'
 
+import * as ga from '../lib/ga'
+
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(false)
 
@@ -23,6 +25,22 @@ function MyApp({ Component, pageProps }) {
       Router.events.off('routeChangeError', end)
     }
   }, [])
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      ga.pageview(url)
+    }
+    // When the component is mounted, subscribe to router changes
+    // and log those page views
+    Router.events.on('routeChangeComplete', handleRouteChange)
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method
+    return () => {
+      Router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [Router.events])
+
   return (
     <ContextProvider>
       {loading ? (
