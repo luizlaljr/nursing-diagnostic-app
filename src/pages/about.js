@@ -52,12 +52,17 @@ function About() {
             <h6>AVALIE-NOS</h6>
           </div>
           <p>
-            https://docs.google.com/forms/d/1S7lxTiMqoqC5T6oqVedsiK_o3HKBiCpLLWHOM1hUCf4/edit?usp=sharing
+            <a href="https://docs.google.com/forms/d/1S7lxTiMqoqC5T6oqVedsiK_o3HKBiCpLLWHOM1hUCf4/edit?usp=sharing">
+              https://docs.google.com/forms/d/1S7lxTiMqoqC5T6oqVedsiK_o3HKBiCpLLWHOM1hUCf4/edit?usp=sharing
+            </a>
           </p>
           <div className={styles.subtitle}>
             <h6>CONTATO</h6>
           </div>
-          <a href="mailto:alyneborges@id.uff.br">alyneborges@id.uff.br</a>
+          <p>
+            <a href="mailto:alyneborges@id.uff.br">alyneborges@id.uff.br</a>
+          </p>
+
           <button
             type="button"
             className={styles.button}
