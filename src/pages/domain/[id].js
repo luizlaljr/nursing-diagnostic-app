@@ -91,7 +91,7 @@ function Domain(props) {
   return (
     <>
       <Head>
-        <title>Nursing DiagnosIC</title>
+        <title>{props.domain.name} | ND</title>
         <meta
           name="description"
           content="Aplicativo de auxílio ao diagnóstico de enfermagem cardíaca"

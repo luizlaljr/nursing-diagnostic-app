@@ -33,7 +33,7 @@ function Fetch(props) {
   return (
     <>
       <Head>
-        <title>Nursing DiagnosIC</title>
+        <title>Resultado | ND</title>
         <meta
           name="description"
           content="Aplicativo de auxílio ao diagnóstico de enfermagem cardíaca"

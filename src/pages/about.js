@@ -10,7 +10,7 @@ function About() {
   return (
     <>
       <Head>
-        <title>Nursing DiagnosIC</title>
+        <title>Sobre | ND</title>
         <meta
           name="description"
           content="Aplicativo de auxílio ao diagnóstico de enfermagem cardíaca"
