@@ -6,7 +6,6 @@ import Checkbox from '../../components/utils/checkbox/checkbox'
 import Button from '../../components/utils/button/button'
 import Footer from '../../components/footer/index'
 import styles from '../../styles/Domain.module.scss'
-import LottieComponent from '../../components/lottie/index'
 import api from '../../services/api/api'
 import { useAppContext } from '../../context/context'
 
@@ -46,13 +45,11 @@ export async function getStaticProps(context) {
 }
 
 function Domain(props) {
-  const [loading, setLoading] = useState(false)
   const { symptoms } = useAppContext()
   const [fetchParams, setFetchParams] = useState('')
 
-  const handleLoading = () => {
+  const handleFetchGA = () => {
     fetch()
-    setLoading(true)
   }
 
   const handleFetch = () => {
@@ -86,8 +83,6 @@ function Domain(props) {
       },
     })
   }
-
-  if (loading) return <LottieComponent />
   return (
     <>
       <Head>
@@ -146,7 +141,7 @@ function Domain(props) {
               </Button>
             ) : (
               <Button
-                click={handleLoading}
+                click={handleFetchGA}
                 path={handleNextButton(props.domain.id)}
                 background="#E31722"
                 color="#FFF"
