@@ -2,19 +2,19 @@ const list = {
   rules: [
     {
       id: 1,
-      name: 'Checar o histórico do paciente',
+      name: 'Entrevista',
     },
     {
       id: 2,
-      name: 'Entrevista de enfermagem',
+      name: 'Exame Físico',
     },
     {
       id: 3,
-      name: 'Anamnese',
+      name: 'Exames',
     },
     {
       id: 4,
-      name: 'Exames de imagem + exames laboratoriais',
+      name: 'Outras fontes',
     },
   ],
 }

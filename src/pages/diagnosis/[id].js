@@ -73,7 +73,7 @@ function Diagnosis(props) {
                   key={symptom.id}
                   className={symptoms.indexOf(symptom.id) !== -1 ? styles.bold : ''}
                 >
-                  {symptom.name};
+                  {symptom.name}
                 </div>
               ))}
             </div>

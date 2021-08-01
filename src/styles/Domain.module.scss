@@ -23,19 +23,23 @@
 
     .header {
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 10px 0;
-
-      .name {
-        text-decoration: underline;
-      }
 
       .definition {
-        padding: 0;
-        padding-top: 10px;
+        padding-bottom: 10px;
         text-align: center;
+        display: flex;
+        align-items: center;
+
+        i {
+          margin-left: 10px;
+          padding-top: 6px;
+          font-size: min(1.4rem, 3.3vw);
+          color: #777;
+          opacity: .4;
+          text-shadow: none;
+        }
       }
     }
 

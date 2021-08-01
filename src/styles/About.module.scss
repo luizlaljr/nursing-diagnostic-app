@@ -23,16 +23,29 @@
     margin-bottom: 15px;
 
     .title, .subtitle {
+      align-self: flex-start;
       display: flex;
-      justify-content: center;
-      align-items: center;
       padding: 20px 0;
       text-shadow: 2px 2px 2px #aaa;
+    }
+
+    .title {
+      align-self: center;
     }
 
     p {
       text-align: justify;
       text-indent: 20px;
+    }
+
+    .email {
+      align-self: flex-start;
+      display: flex;
+      flex-direction: column;
+
+      a {
+        padding-bottom: 5px;
+      }
     }
 
     ul {
@@ -42,6 +55,10 @@
       align-self: flex-start;
       padding-left: 20px;
       list-style: symbols(cyclic "-");
+
+      li {
+        padding-bottom: 5px;
+      }
     }
 
     .button {

@@ -24,22 +24,18 @@ function About() {
             <h5>SOBRE</h5>
           </div>
           <p>
-            Nursing DiagnosIC é um aplicativo de apoio e decisão clínica para o
-            enfermeiro que atua com pacientes com insuficiência cardíaca. Este
-            aplicativo foi baseado na teoria dos Padrões Funcionais de Marjory Gordon
-            e possui o objetivo de estimular o raciocínio clínico através do sistema
-            de linguagem padronizada da NANDA-I. Desenvolvido como produto de
-            mestrado da enfermeira Alyne Santos Borges.
+            Nursing DiagnosIC é um aplicativo de apoio a decisão clínica para
+            enfermeiros que atuam no cuidado de pacientes com insuficiência cardíaca.
+            Foi desenvolvido como parte de uma dissertação de mestrado do Programa
+            Ciências do Cuidado em Saúde da Universidade Federal Fluminense (UFF).
           </p>
           <div className={styles.subtitle}>
             <h6>COLABORADORES</h6>
           </div>
           <ul>
-            <li>Enfermeira Mestranda Alyne Santos Borges</li>
-            <li>
-              Prof. Dra Ana Carla Dantas Cavalcanti (Escola de enfermagem/UFF){' '}
-            </li>
-            <li>Dr. Flávio Luiz Seixas (Instituto de computação/UFF)</li>
+            <li>Alyne Santos Borges</li>
+            <li>Ana Carla Dantas Cavalcanti (Escola de enfermagem/UFF) </li>
+            <li>Flávio Luiz Seixas (Instituto de computação/UFF)</li>
           </ul>
           <div className={styles.subtitle}>
             <h6>DESENVOLVEDORES</h6>
@@ -49,20 +45,13 @@ function About() {
             <li>Luiz Alberto Alves de Brito Junior (Instituto de computação/UFF)</li>
           </ul>
           <div className={styles.subtitle}>
-            <h6>AVALIE-NOS</h6>
-          </div>
-          <p>
-            <a href="https://docs.google.com/forms/d/1S7lxTiMqoqC5T6oqVedsiK_o3HKBiCpLLWHOM1hUCf4/edit?usp=sharing">
-              https://docs.google.com/forms/d/1S7lxTiMqoqC5T6oqVedsiK_o3HKBiCpLLWHOM1hUCf4/edit?usp=sharing
-            </a>
-          </p>
-          <div className={styles.subtitle}>
             <h6>CONTATO</h6>
           </div>
-          <p>
+          <p className={styles.email}>
             <a href="mailto:alyneborges@id.uff.br">alyneborges@id.uff.br</a>
+            <a href="mailto:luiz_alberto@id.uff.br">luiz_alberto@id.uff.br</a>
+            <a href="mailto:josefagisely@id.uff.br">josefagisely@id.uff.br</a>
           </p>
-
           <button
             type="button"
             className={styles.button}

@@ -47,6 +47,11 @@ export async function getStaticProps(context) {
 function Domain(props) {
   const { symptoms } = useAppContext()
   const [fetchParams, setFetchParams] = useState('')
+  const [show, setShow] = useState(false)
+
+  const handleDisplay = () => {
+    setShow(!show)
+  }
 
   const handleFetchGA = () => {
     fetch()
@@ -100,10 +105,20 @@ function Domain(props) {
             <Breadcrumb currentyID={props.domain.id} domains={props.domains} />
           </div>
           <div className={styles.header}>
-            <h5 className={styles.definition}>{props.domain.definition}</h5>
+            <h5 onClick={handleDisplay} className={styles.definition}>
+              {props.domain.definition}
+              {show ? (
+                <i className="fas fa-angle-up"></i>
+              ) : (
+                <i className="fas fa-search"></i>
+              )}
+            </h5>
           </div>
           <div className={styles.info}>
-            <p className={styles.definition}>
+            <p
+              className={styles.definition}
+              style={{ display: show ? 'block' : 'none' }}
+            >
               <strong>Definição: </strong>
               {props.domain.abstract}
             </p>

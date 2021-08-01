@@ -44,7 +44,7 @@ function Fetch(props) {
       <main className={styles.container}>
         <div className={styles.content}>
           <div className={styles.header}>
-            <h5 className={styles.title}>Possíveis Diagnósticos</h5>
+            <h5 className={styles.title}>Diagnósticos de Enfermagem</h5>
           </div>
           <ul className={styles.list}>
             {props.diagnostics.map((diagnosis) => (

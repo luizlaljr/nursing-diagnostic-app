@@ -38,13 +38,13 @@ function Begin(props) {
       <main className={styles.container}>
         <div className={styles.content}>
           <div className={styles.header}>
-            <h5 className={styles.name}>Raciocínio Clínico</h5>
+            <h5 className={styles.name}>Raciocínio Diagnóstico de Enfermagem</h5>
           </div>
           <div className={styles.info}>
             <p className={styles.text}>
-              Para realizar o raciocínio clínico através do processo de enfermagem,
-              primeiro será necessário concluir todas as etapas de coleta de dados
-              relacionadas abaixo:
+              Para o raciocínio diagnóstico é necessário a coleta de dados do
+              paciente com insuficiência cardíaca. Marque abaixo as fontes de dados
+              do paciente avaliado:
             </p>
           </div>
           <ul className={styles.checklist}>
@@ -64,7 +64,7 @@ function Begin(props) {
             >
               Voltar
             </Button>
-            {start ? (
+            {!start ? (
               <Button
                 click={null}
                 path="/domain/1"
