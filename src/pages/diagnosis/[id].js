@@ -82,13 +82,15 @@ function Diagnosis(props) {
             <label className={styles.label}>Fatores Relacionados:</label>
             <div className={styles.definition}>{props.causes}</div>
           </div>
-          <button
-            type="button"
-            className={styles.button}
-            onClick={() => router.back()}
-          >
-            Voltar
-          </button>
+          <div className={styles.divbutton}>
+            <button
+              type="button"
+              className={styles.button}
+              onClick={() => router.back()}
+            >
+              Voltar
+            </button>
+          </div>
         </div>
       </main>
       <Footer />

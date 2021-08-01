@@ -69,8 +69,11 @@
       }
     }
 
+    .divbutton {
+      align-self: center;
+    }
+
     .button {
-    align-self: center;
     display: flex;
     justify-content: center;
     align-items: center;

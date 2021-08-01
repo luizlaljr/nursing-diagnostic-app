@@ -52,13 +52,15 @@ function About() {
             <a href="mailto:luiz_alberto@id.uff.br">luiz_alberto@id.uff.br</a>
             <a href="mailto:josefagisely@id.uff.br">josefagisely@id.uff.br</a>
           </p>
-          <button
-            type="button"
-            className={styles.button}
-            onClick={() => router.back()}
-          >
-            Voltar
-          </button>
+          <div>
+            <button
+              type="button"
+              className={styles.button}
+              onClick={() => router.back()}
+            >
+              Voltar
+            </button>
+          </div>
         </div>
       </main>
       <Footer />
