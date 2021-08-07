@@ -38,7 +38,7 @@ function Begin(props) {
       <main className={styles.container}>
         <div className={styles.content}>
           <div className={styles.header}>
-            <h5 className={styles.name}>Raciocínio Diagnóstico de Enfermagem</h5>
+            <h5 className={styles.name}>Coleta de Dados</h5>
           </div>
           <div className={styles.info}>
             <p className={styles.text}>

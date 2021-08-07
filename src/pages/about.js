@@ -33,7 +33,10 @@ function About() {
             <h6>COLABORADORES</h6>
           </div>
           <ul>
-            <li>Alyne Santos Borges</li>
+            <li>
+              Alyne Santos Borges (Programa Acadêmico em Ciências do Cuidado em
+              Saúde/UFF)
+            </li>
             <li>Ana Carla Dantas Cavalcanti (Escola de enfermagem/UFF) </li>
             <li>Flávio Luiz Seixas (Instituto de computação/UFF)</li>
           </ul>

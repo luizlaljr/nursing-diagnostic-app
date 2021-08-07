@@ -22,7 +22,7 @@ function menu() {
           Início
         </a>
         <a className={asPath !== '/about' ? styles.actived : ''} href="/begin">
-          Raciocínio Clínico
+          Coleta de Dados
         </a>
         <a className={asPath === '/about' ? styles.actived : ''} href="/about">
           Sobre

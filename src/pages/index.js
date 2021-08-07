@@ -33,7 +33,7 @@ export default function Home() {
             path="/begin"
             background="#FFF"
             color="#C1090"
-            borderColor="#E31722"
+            borderColor="#CC191D"
           >
             Começar
           </Button>
