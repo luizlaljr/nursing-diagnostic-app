@@ -54,6 +54,13 @@ function Begin(props) {
               </li>
             ))}
           </ul>
+          <div className={styles.info}>
+            <p className={styles.text}>
+              Após a união das fontes de dados encontradas, será possível navegar
+              entre os domínios e escolher as características definidoras que mais se
+              aplicam.
+            </p>
+          </div>
           <div className={styles.buttons}>
             <Button
               click={null}

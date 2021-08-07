@@ -22,7 +22,6 @@ function Lottie() {
           <LottieAnimation options={defaultOptions} height={140} width={140} />
         </div>
       </div>
-      <p className={styles.subtitle}>Carregando...</p>
     </div>
   )
 }

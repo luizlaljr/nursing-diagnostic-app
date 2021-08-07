@@ -25,12 +25,11 @@
       color: var(--white-color);
     }
 
-    .title {
+    .title, .welcome {
       line-height: 1.15;
       text-align: center;
       font-family: var(--font-logo);
       font-weight: 100;
-      margin-bottom: 3rem;
       color: var(--white-color);
 
       span {
@@ -45,13 +44,42 @@
       height: min(20rem, 50vw);
     }
 
+    .image_min {
+      margin: 2rem 0 1rem;
+      width: min(16rem, 30vw);
+      height: min(16rem, 30vw);
+    }
+
+    .brand {
+      display: flex;
+      gap: 0.8rem;
+      margin: 1rem 0;
+    }
+
     .subtitle {
       text-align: center;
       margin-top: 2rem;
-      font-size: max(0.8rem, 1vw);
+      font-size: max(1rem, 1.2vw);
       font-weight: bold;
       color: var(--white-color);
       margin-bottom: 1.6rem;
+    }
+
+    .text {
+      text-align: center;
+      margin: 1rem auto;
+      width: 60%;
+      line-height: 1.5;
+      font-weight: bold;
+      font-size: min(1.4rem, 3.4vw);
+      color: rgb(231, 229, 229);
+      margin-bottom: 1.6rem;
+
+      .pretitle {
+        font-family: 'Roboto';
+        font-weight: bold;
+        margin-bottom: 0.6rem;
+      }
     }
 
   }
