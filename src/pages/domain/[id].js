@@ -102,7 +102,7 @@ function Domain(props) {
       <main className={styles.container}>
         <div className={styles.content}>
           <div className={styles.breadcrumb}>
-            <Breadcrumb currentyID={props.domain.id} domains={props.domains} />
+            <Breadcrumb currentyID={props.domain.order} domains={props.domains} />
           </div>
           <div className={styles.header}>
             <h5 onClick={handleDisplay} className={styles.definition}>
