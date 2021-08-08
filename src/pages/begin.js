@@ -17,11 +17,11 @@ export async function getStaticProps() {
 }
 
 function Begin(props) {
-  const [start, setStart] = useState(false)
+  const [start, setStart] = useState(true)
   const { rules } = useAppContext()
 
   const handleStart = () => {
-    setStart(!!rules.size && false)
+    setStart(rules.size === 4 || true)
   }
 
   return (
@@ -71,7 +71,7 @@ function Begin(props) {
             >
               Voltar
             </Button>
-            {!start ? (
+            {start ? (
               <Button
                 click={null}
                 path="/domain/1"
