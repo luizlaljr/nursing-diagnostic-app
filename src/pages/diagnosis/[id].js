@@ -54,7 +54,6 @@ function Diagnosis(props) {
       <main className={styles.container}>
         <div className={styles.content}>
           <div className={styles.title}>
-            <label className={styles.label}>Diagnóstico:</label>
             <div className={styles.definition}>
               {props.name} ({props.code})
             </div>
@@ -82,6 +81,19 @@ function Diagnosis(props) {
             <label className={styles.label}>Fatores Relacionados:</label>
             <div className={styles.definition}>{props.causes}</div>
           </div>
+          {props.conditions && (
+            <div className={styles.info}>
+              <label className={styles.label}>Condições Associadas:</label>
+              <div className={styles.definition}>{props.conditions}</div>
+            </div>
+          )}
+          {props.populations && (
+            <div className={styles.info}>
+              <label className={styles.label}>Populações em Risco:</label>
+              <div className={styles.definition}>{props.populations}</div>
+            </div>
+          )}
+
           <div className={styles.divbutton}>
             <button
               type="button"
