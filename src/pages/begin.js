@@ -17,11 +17,11 @@ export async function getStaticProps() {
 }
 
 function Begin(props) {
-  const [start, setStart] = useState(false)
+  const [start, setStart] = useState()
   const { rules } = useAppContext()
 
   const handleStart = () => {
-    setStart(rules.size === 4)
+    setStart(!!rules.size && false)
   }
 
   return (
