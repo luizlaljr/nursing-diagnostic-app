@@ -144,7 +144,7 @@ function Domain(props) {
             >
               Voltar
             </Button>
-            {props.domain.id !== props.domains.length ? (
+            {props.domain.order !== props.domains.length ? (
               <Button
                 click={null}
                 path={handleNextButton(props.domain.id)}

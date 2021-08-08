@@ -5,7 +5,7 @@ import styles from './styles.module.scss'
 function BasicCheckbox({ rule, handleStart }) {
   const { rules, addRules, removeRules } = useAppContext()
 
-  const [checked, setChecked] = useState(true)
+  const [checked, setChecked] = useState(false)
 
   const toggleCheck = () => {
     setChecked(!checked)

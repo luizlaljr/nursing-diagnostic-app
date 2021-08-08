@@ -17,7 +17,7 @@ export async function getStaticProps() {
 }
 
 function Begin(props) {
-  const [start, setStart] = useState()
+  const [start, setStart] = useState(false)
   const { rules } = useAppContext()
 
   const handleStart = () => {
