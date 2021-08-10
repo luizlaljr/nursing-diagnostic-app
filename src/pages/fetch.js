@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { jsPDF } from 'jspdf'
+
 import Head from 'next/head'
 import Header from '../components/header/index'
 import Footer from '../components/footer/index'
@@ -22,6 +23,11 @@ export async function getServerSideProps(context) {
 
 function Fetch(props) {
   const [show, setShow] = useState(false)
+  const [diagnostics, setDiagnostics] = useState(props.diagnostics)
+
+  const removeDiagnosis = (id) => {
+    setDiagnostics(diagnostics.filter((diagnosis) => diagnosis.id !== id))
+  }
 
   const handleDisplay = () => {
     setShow(!show)
@@ -31,25 +37,61 @@ function Fetch(props) {
     return `/diagnosis/${id}`
   }
 
-  const generatePdf = (diagnostics) => {
+  const generatePdf = async (diagnostics) => {
     // eslint-disable-next-line new-cap
     const doc = new jsPDF()
-
-    doc.text(document.getElementById('title').innerHTML, 65, 15)
-    doc.line(65, 17, 140, 17)
+    doc.setFont('Roboto', 'bold')
+    doc.setFontSize(20)
+    doc.setTextColor(89, 89, 89)
+    doc.text(document.getElementById('title').innerHTML, 63, 15)
+    doc.setDrawColor(204, 25, 29)
+    doc.line(63, 17, 153, 17)
     let gap = 0
+    const MaxHeightPage = doc.internal.pageSize.getHeight() - 20
+    let pageHeight
+    doc.setFont('Roboto', 'normal')
+    doc.setFontSize(13)
+
     diagnostics.forEach((diagnosis) => {
-      doc.rect(18, 27.6 + 12 * gap, 3, 1, 'F')
-      doc.text(diagnosis.name, 25, 30 + 12 * gap)
+      doc.setFillColor(204, 25, 29)
+      doc.rect(18, 30.6 + 12 * gap, 3, 1, 'F')
+
+      doc.text(diagnosis.name, 25, 33 + 12 * gap)
       gap += 1
+      pageHeight = 33 + 12 * gap
+
+      if (pageHeight >= MaxHeightPage) {
+        doc.addPage()
+        gap = 0
+      }
 
       diagnosis.related.forEach((symptom) => {
+        doc.setDrawColor(204, 25, 29)
         doc.circle(32, 27.8 + 12 * gap, 1, 'S')
-        doc.text(symptom.name, 35, 30 + 12 * gap)
+        doc.text(symptom.name, 35, 29.5 + 12 * gap)
         gap += 1
+        pageHeight = 29.5 + 12 * gap
+
+        if (pageHeight >= MaxHeightPage) {
+          doc.addPage()
+          gap = 0
+        }
       })
     })
-    doc.save('diagnóstico de enfermagem.pdf')
+
+    const date = new Intl.DateTimeFormat('pt-BR', {
+      dateStyle: 'full',
+      timeStyle: 'long',
+    }).format(new Date())
+
+    doc.line(5, 276, 205, 276)
+    doc.line(5, 275, 205, 275)
+    doc.setFont('Cinzel', 'normal')
+    doc.setFontSize(9)
+    doc.text(date, 15, 285)
+    doc.text('Nursing DiagnosIC', 175, 285)
+    doc.output('dataurlnewwindow')
+    // doc.save('diagnóstico de enfermagem.pdf')
   }
 
   return (
@@ -70,21 +112,28 @@ function Fetch(props) {
               <h5 id="title">Diagnósticos de Enfermagem</h5>
             </div>
             <button
-              onClick={() => generatePdf(props.diagnostics)}
+              onClick={() => generatePdf(diagnostics)}
               className={styles.button}
             >
               <i className="fas fa-print"></i>
             </button>
           </div>
           <ul className={styles.list}>
-            {props.diagnostics.map((diagnosis, index) => (
+            {diagnostics.map((diagnosis, index) => (
               <li key={diagnosis.id} className={styles.listitem}>
-                <Link href={handlePath(diagnosis.id)}>
-                  <a>
-                    <div id={`diagnosis_${index}`}>{diagnosis.name}</div>{' '}
+                <div className={styles.item}>
+                  <div
+                    className={styles.removeButton}
+                    onClick={() => removeDiagnosis(diagnosis.id)}
+                  >
+                    <i className={`${styles.removeIcon} far fa-trash-alt`}></i>
+                  </div>
+                  <div id={`diagnosis_${index}`}>{diagnosis.name}</div>{' '}
+                  <Link href={handlePath(diagnosis.id)}>
                     <i className="fas fa-search"></i>
-                  </a>
-                </Link>
+                  </Link>
+                </div>
+
                 <div
                   className={styles.symptoms}
                   style={{ display: show ? 'block' : 'none' }}
