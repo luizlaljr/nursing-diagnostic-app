@@ -24,6 +24,7 @@
       line-height: 5;
       color: #ddd;
       transition: color 0.2s;
+      overflow: hidden;
 
       &:hover {
         color: var(--white-color);
@@ -49,7 +50,7 @@
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 1420px) {
   .menuSection {
     position: absolute;
     display: block;
