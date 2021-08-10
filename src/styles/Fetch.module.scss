@@ -74,7 +74,7 @@
       border-radius: 10px;
       text-shadow: 2px 2px 2px #bbb;
 
-      a {
+      .item {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -84,7 +84,20 @@
         color: #777;
         opacity: .4;
         text-shadow: none;
-        margin-left: 0.4rem;
+        margin: 0 0.4rem;
+      }
+
+      .removeButton {
+        background: var(--primary-color);
+        padding: 3px;
+        border: none;
+        border-radius: 15%;
+        margin: 0 0.4rem;
+      }
+
+      .removeIcon {
+        color: white;
+        opacity: .98;
       }
 
       .symptoms {
