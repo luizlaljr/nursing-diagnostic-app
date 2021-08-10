@@ -49,8 +49,7 @@ function Fetch(props) {
         gap += 1
       })
     })
-    doc.output('dataurlnewwindow')
-    // doc.save('diagnóstico de enfermagem.pdf')
+    doc.save('diagnóstico de enfermagem.pdf')
   }
 
   return (
