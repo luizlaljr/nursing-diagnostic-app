@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { jsPDF } from 'jspdf'
 import Head from 'next/head'
 import Header from '../components/header/index'
 import Footer from '../components/footer/index'
@@ -30,6 +31,28 @@ function Fetch(props) {
     return `/diagnosis/${id}`
   }
 
+  const generatePdf = (diagnostics) => {
+    // eslint-disable-next-line new-cap
+    const doc = new jsPDF()
+
+    doc.text(document.getElementById('title').innerHTML, 65, 15)
+    doc.line(65, 17, 140, 17)
+    let gap = 0
+    diagnostics.forEach((diagnosis) => {
+      doc.rect(18, 27.6 + 12 * gap, 3, 1, 'F')
+      doc.text(diagnosis.name, 25, 30 + 12 * gap)
+      gap += 1
+
+      diagnosis.related.forEach((symptom) => {
+        doc.circle(32, 27.8 + 12 * gap, 1, 'S')
+        doc.text(symptom.name, 35, 30 + 12 * gap)
+        gap += 1
+      })
+    })
+    doc.output('dataurlnewwindow')
+    // doc.save('diagnóstico de enfermagem.pdf')
+  }
+
   return (
     <>
       <Head>
@@ -44,14 +67,23 @@ function Fetch(props) {
       <main className={styles.container}>
         <div className={styles.content}>
           <div className={styles.header}>
-            <h5 className={styles.title}>Diagnósticos de Enfermagem</h5>
+            <div className={styles.title}>
+              <h5 id="title">Diagnósticos de Enfermagem</h5>
+            </div>
+            <button
+              onClick={() => generatePdf(props.diagnostics)}
+              className={styles.button}
+            >
+              <i className="fas fa-print"></i>
+            </button>
           </div>
           <ul className={styles.list}>
-            {props.diagnostics.map((diagnosis) => (
+            {props.diagnostics.map((diagnosis, index) => (
               <li key={diagnosis.id} className={styles.listitem}>
                 <Link href={handlePath(diagnosis.id)}>
                   <a>
-                    {diagnosis.name} <i className="fas fa-search"></i>
+                    <div id={`diagnosis_${index}`}>{diagnosis.name}</div>{' '}
+                    <i className="fas fa-search"></i>
                   </a>
                 </Link>
                 <div

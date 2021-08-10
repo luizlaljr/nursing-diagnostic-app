@@ -22,10 +22,39 @@
 
     .header {
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 10px 0;
+
+      .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h5{
+          text-align: center;
+        }
+      } 
+
+      .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 1.3rem;
+        width: min(2.3rem, 5vw);
+        height: min(2.3rem, 5vw);
+        background-color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+        border-radius: 20%;
+
+        i {
+          font-size: min(1.4rem, 3.3vw);
+          color: white;
+          opacity: .98;
+          text-shadow: none;
+          
+        }
+      }    
     }
 
     .list {
@@ -45,10 +74,17 @@
       border-radius: 10px;
       text-shadow: 2px 2px 2px #bbb;
 
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
       i {
         color: #777;
         opacity: .4;
         text-shadow: none;
+        margin-left: 0.4rem;
       }
 
       .symptoms {
