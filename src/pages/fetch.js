@@ -90,8 +90,7 @@ function Fetch(props) {
     doc.setFontSize(9)
     doc.text(date, 15, 285)
     doc.text('Nursing DiagnosIC', 175, 285)
-    doc.output('dataurlnewwindow')
-    // doc.save('diagnóstico de enfermagem.pdf')
+    doc.save('diagnóstico de enfermagem.pdf')
   }
 
   return (
