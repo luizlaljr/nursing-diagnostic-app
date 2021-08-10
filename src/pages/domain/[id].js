@@ -68,12 +68,12 @@ function Domain(props) {
     return ids === '/fetch?id=' ? '/' : ids
   }
 
-  const handleBackButton = (id) => {
-    return id === 1 ? '/begin' : (id - 1).toString()
+  const handleBackButton = (order) => {
+    return order === 1 ? '/begin' : (order - 1).toString()
   }
 
-  const handleNextButton = (id) => {
-    return id < props.domains.length ? (id + 1).toString() : handleFetch()
+  const handleNextButton = (order) => {
+    return order < props.domains.length ? (order + 1).toString() : handleFetch()
   }
 
   useEffect(() => {
@@ -137,7 +137,7 @@ function Domain(props) {
           <div className={styles.buttons}>
             <Button
               click={null}
-              path={handleBackButton(props.domain.id)}
+              path={handleBackButton(props.domain.order)}
               background="#FFF"
               color="#514F5A"
               borderColor="#E31722"
@@ -147,7 +147,7 @@ function Domain(props) {
             {props.domain.order !== props.domains.length ? (
               <Button
                 click={null}
-                path={handleNextButton(props.domain.id)}
+                path={handleNextButton(props.domain.order)}
                 background="#FFF"
                 color="#514F5A"
                 borderColor="#E31722"
@@ -157,7 +157,7 @@ function Domain(props) {
             ) : (
               <Button
                 click={handleFetchGA}
-                path={handleNextButton(props.domain.id)}
+                path={handleNextButton(props.domain.order)}
                 background="#E31722"
                 color="#FFF"
                 borderColor="#E31722"
