@@ -61,3 +61,39 @@ h5 {
 h6 {
   font-size: min(2.2rem, 5.4vw);
 }
+
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    height: 100vw;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+  h1 {
+    font-size: min(6rem, 15vh);
+  }
+  
+  h2 {
+    font-size: min(5rem, 12.5vh);
+  }
+  
+  h3 {
+    font-size: min(4rem, 10vh);
+  }
+  
+  h4 {
+    font-size: min(3rem, 9vh);
+  }
+  
+  h5 {
+    font-size: min(2.5rem, 7vh);
+  }
+  
+  h6 {
+    font-size: min(2.2rem, 5.4vh);
+  }
+}

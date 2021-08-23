@@ -157,7 +157,7 @@
       
     }
 
-    .menuSectionOpen{
+    .menuSectionOpen {
       display: block;
       position: fixed;
       top: 0;
@@ -169,4 +169,40 @@
       transition: 0.3s ease-in-out;
     }
   }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  .menuSection {
+    top: 0;
+    right: 0px;
+    height: 100vh;
+    width: 75%;
+
+    .nav {      
+      margin-top: 8vw;
+
+      a {
+        height: 10vw;
+        font-size: min(1.8rem, 5.4vh);
+      }
+    }
+
+    .navOn {
+      margin-top: 8vw;
+      
+      a {
+        height: 10vw;
+        font-size: min(1.8rem, 5.4vh);
+      }
+    }
+      .menuSectionClosed {
+        width: 75vh;
+        height: 100vw; 
+      }
+
+      .menuSectionOpen {
+        width: 75vh;
+        height: 100vw; 
+      }
+    }
 }
