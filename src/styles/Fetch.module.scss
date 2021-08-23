@@ -41,15 +41,15 @@
         justify-content: center;
         align-items: center;
         margin: 0 1.3rem;
-        width: min(2.3rem, 5vw);
+        width: min(3.3rem, 6.2vw);
         height: min(2.3rem, 5vw);
-        background-color: var(--primary-color);
-        border: 1px solid var(--primary-color);
+        background-color: #fff;
         border-radius: 20%;
+        box-shadow: 2px 2px 2px #bbb;
 
         i {
           font-size: min(1.4rem, 3.3vw);
-          color: white;
+          color: var(--primary-color);
           opacity: .98;
           text-shadow: none;
           
@@ -66,7 +66,7 @@
     }
 
     .listitem {
-      margin-bottom: min(50px, 3vw);
+      margin-bottom: min(60px, 5vw);
       font-size: min(1.4rem, 3.3vw);
       text-align: center;
       padding: 0px 20px min(5px, 0.5vw);
