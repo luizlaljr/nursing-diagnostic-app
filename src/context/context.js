@@ -12,7 +12,7 @@ const ContextProvider = ({ children }) => {
   const [rules, setRules] = useState(new Set())
 
   const handleAuth = (username, password) => {
-    if (username === 'u' && password === 's') {
+    if (username === process.env.USERNAME && password === process.env.password) {
       setAuthenticated(true)
     }
   }
