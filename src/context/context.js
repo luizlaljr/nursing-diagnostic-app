@@ -11,12 +11,6 @@ const ContextProvider = ({ children }) => {
   const [symptoms, setSymptoms] = useState([])
   const [rules, setRules] = useState(new Set())
 
-  const handleAuth = (username, password) => {
-    if (username === process.env.USERNAME && password === process.env.PASSWORD) {
-      setAuthenticated(true)
-    }
-  }
-
   const addSymptoms = (symptom) => {
     const symptomsList = [...symptoms]
     symptomsList.push(symptom)
@@ -55,7 +49,7 @@ const ContextProvider = ({ children }) => {
         addRules,
         removeRules,
         authenticated,
-        handleAuth,
+        setAuthenticated,
       }}
     >
       {children}

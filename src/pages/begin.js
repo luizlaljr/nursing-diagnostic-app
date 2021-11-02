@@ -12,7 +12,11 @@ export async function getStaticProps() {
   const rules = list
 
   return {
-    props: rules,
+    props: {
+      rules,
+      username: process.env.USERNAME,
+      password: process.env.PASSWORD,
+    },
   }
 }
 
@@ -22,7 +26,7 @@ function Begin(props) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
-  const { authenticated, handleAuth } = useAppContext()
+  const { authenticated, setAuthenticated } = useAppContext()
   const [loginScreen, setLoginScreen] = useState()
 
   const handleStart = () => {
@@ -33,8 +37,11 @@ function Begin(props) {
     e.preventDefault()
     setLoading(true)
     if (username !== '' && password !== '') {
-      handleAuth(username, password)
+      if (username === props.username && password === props.password) {
+        setAuthenticated(true)
+      }
     }
+
     setTimeout(() => {
       setLoading(false)
       setUsername('')
@@ -112,7 +119,7 @@ function Begin(props) {
             </p>
           </div>
           <ul className={styles.checklist}>
-            {props.rules.map((rule) => (
+            {props.rules.rules.map((rule) => (
               <li key={rule.id} className={styles.listitem}>
                 <BasicCheckbox rule={rule} handleStart={handleStart}></BasicCheckbox>
               </li>
