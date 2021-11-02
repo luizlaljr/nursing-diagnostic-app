@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Head from 'next/head'
 import Header from '../../components/header/index'
 import { useRouter } from 'next/router'
@@ -38,7 +38,14 @@ export async function getStaticProps(context) {
 
 function Diagnosis(props) {
   const router = useRouter()
+  const { authenticated } = useAppContext()
   const { symptoms } = useAppContext()
+
+  useEffect(() => {
+    if (!authenticated) {
+      router.push('/')
+    }
+  }, [])
 
   return (
     <>

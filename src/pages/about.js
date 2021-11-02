@@ -23,12 +23,25 @@ function About() {
           <div className={styles.title}>
             <h5>SOBRE</h5>
           </div>
-          <p>
-            Nursing DiagnosIC é um aplicativo de apoio a decisão clínica para
-            enfermeiros que atuam no cuidado de pacientes com insuficiência cardíaca.
-            Foi desenvolvido como parte de uma dissertação de mestrado do Programa
-            Ciências do Cuidado em Saúde da Universidade Federal Fluminense (UFF).
-          </p>
+          <div className={styles.description}>
+            <p>
+              Nursing DiagnosIC é um aplicativo de apoio a decisão clínica para
+              enfermeiros que atuam no cuidado de pacientes com insuficiência
+              cardíaca e utiliza como referencia a classificação de{' '}
+              <a href="https://apoio.grupoa.com.br/nanda-i/#sobre-obra">
+                DE da NANDA-I
+              </a>
+              .
+            </p>
+            <p>
+              O conteúdo não pode está vinculado a nenhuma outra forma de
+              circularização.
+            </p>
+            <p>
+              Foi desenvolvido como parte de uma dissertação de mestrado do Programa
+              Ciências do Cuidado em Saúde da Universidade Federal Fluminense (UFF).
+            </p>
+          </div>
           <div className={styles.subtitle}>
             <h6>COLABORADORES</h6>
           </div>

@@ -28,15 +28,31 @@
       padding: 20px 0;
       text-shadow: 2px 2px 2px #aaa;
     }
-
+    
     .title {
       align-self: center;
     }
 
-    p {
-      text-align: justify;
-      text-indent: 20px;
+    .description > p:nth-child(2){
+      margin: 5px 0;
+      font-style: italic;
+      font-weight: bolder;
+      font-size: 1.1rem;
     }
+
+    p {
+      text-align: left;
+      align-self: flex-start;
+      text-indent: 20px;
+
+      a {
+        font-style: italic;
+        font-weight: bolder;
+        color: rgb(253, 99, 130);
+      }
+    }
+
+    
 
     .email {
       align-self: flex-start;

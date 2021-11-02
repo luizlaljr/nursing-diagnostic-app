@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Header from '../components/header/index'
 import Button from '../components/utils/button/button'
@@ -19,10 +19,36 @@ export async function getStaticProps() {
 function Begin(props) {
   const [start, setStart] = useState()
   const { rules } = useAppContext()
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [loading, setLoading] = useState(false)
+  const { authenticated, handleAuth } = useAppContext()
+  const [loginScreen, setLoginScreen] = useState()
 
   const handleStart = () => {
     setStart(rules.size > 0)
   }
+
+  const handleLogin = (e) => {
+    e.preventDefault()
+    setLoading(true)
+    if (username !== '' && password !== '') {
+      handleAuth(username, password)
+    }
+    setTimeout(() => {
+      setLoading(false)
+      setUsername('')
+      setPassword('')
+    }, 1500)
+  }
+
+  useEffect(() => {
+    setLoginScreen(authenticated)
+  }, [])
+
+  useEffect(() => {
+    setLoginScreen(authenticated)
+  }, [authenticated])
 
   return (
     <>
@@ -35,6 +61,44 @@ function Begin(props) {
         <link rel="icon" href="/favicon.ico?v=2" />
       </Head>
       <Header />
+      {!loginScreen && (
+        <div className={styles.modal}>
+          <div className={styles.modalContainer}>
+            <h1>Login to Your Account</h1>
+            <form>
+              <input
+                className={styles.username}
+                type="text"
+                name="user"
+                placeholder="Usuário"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <input
+                className={styles.password}
+                type="password"
+                name="pass"
+                placeholder="Senha"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              {loading ? (
+                <div className={styles.loaderContainer}>
+                  <div className={styles.loader}></div>
+                </div>
+              ) : (
+                <button
+                  onClick={handleLogin}
+                  name="login"
+                  className={styles.modalButton}
+                >
+                  Entrar
+                </button>
+              )}
+            </form>
+          </div>
+        </div>
+      )}
       <main className={styles.container}>
         <div className={styles.content}>
           <div className={styles.header}>

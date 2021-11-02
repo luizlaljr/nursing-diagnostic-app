@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import { jsPDF } from 'jspdf'
 
 import Head from 'next/head'
@@ -6,6 +7,8 @@ import Header from '../components/header/index'
 import Footer from '../components/footer/index'
 import Link from 'next/link'
 import api from '../services/api/api'
+
+import { useAppContext } from '../context/context'
 
 import styles from '../styles/Fetch.module.scss'
 
@@ -24,6 +27,8 @@ export async function getServerSideProps(context) {
 function Fetch(props) {
   const [show, setShow] = useState(false)
   const [diagnostics, setDiagnostics] = useState(props.diagnostics)
+  const router = useRouter()
+  const { authenticated } = useAppContext()
 
   const removeDiagnosis = (id) => {
     setDiagnostics(diagnostics.filter((diagnosis) => diagnosis.id !== id))
@@ -92,6 +97,12 @@ function Fetch(props) {
     doc.text('Nursing DiagnosIC', 175, 285)
     doc.save('diagnóstico de enfermagem.pdf')
   }
+
+  useEffect(() => {
+    if (!authenticated) {
+      router.push('/')
+    }
+  }, [])
 
   return (
     <>

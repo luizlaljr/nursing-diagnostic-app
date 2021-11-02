@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react'
+import React, { createContext, useState, useContext, useEffect } from 'react'
 
 const Context = createContext()
 
@@ -7,8 +7,15 @@ function useAppContext() {
 }
 
 const ContextProvider = ({ children }) => {
+  const [authenticated, setAuthenticated] = useState(false)
   const [symptoms, setSymptoms] = useState([])
   const [rules, setRules] = useState(new Set())
+
+  const handleAuth = (username, password) => {
+    if (username === 'u' && password === 's') {
+      setAuthenticated(true)
+    }
+  }
 
   const addSymptoms = (symptom) => {
     const symptomsList = [...symptoms]
@@ -33,6 +40,10 @@ const ContextProvider = ({ children }) => {
     setRules(new Set(newRules))
   }
 
+  useEffect(() => {
+    setAuthenticated(false)
+  }, [])
+
   return (
     <Context.Provider
       value={{
@@ -43,6 +54,8 @@ const ContextProvider = ({ children }) => {
         rules,
         addRules,
         removeRules,
+        authenticated,
+        handleAuth,
       }}
     >
       {children}

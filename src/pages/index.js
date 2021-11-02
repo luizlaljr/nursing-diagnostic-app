@@ -60,7 +60,7 @@ export default function Home() {
                 color="#C1090"
                 borderColor="#CC191D"
               >
-                Começar
+                Login
               </Button>
             </>
           )}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Header from '../../components/header/index'
 import Breadcrumb from '../../components/utils/breadcrumb/stepNavigation'
@@ -45,9 +46,11 @@ export async function getStaticProps(context) {
 }
 
 function Domain(props) {
+  const { authenticated } = useAppContext()
   const { symptoms } = useAppContext()
   const [fetchParams, setFetchParams] = useState('')
   const [show, setShow] = useState(false)
+  const router = useRouter()
 
   const handleDisplay = () => {
     setShow(!show)
@@ -75,6 +78,12 @@ function Domain(props) {
   const handleNextButton = (order) => {
     return order < props.domains.length ? (order + 1).toString() : handleFetch()
   }
+
+  useEffect(() => {
+    if (!authenticated) {
+      router.push('/')
+    }
+  }, [])
 
   useEffect(() => {
     setFetchParams(symptoms)
