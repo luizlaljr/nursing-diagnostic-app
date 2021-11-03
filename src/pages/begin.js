@@ -71,7 +71,7 @@ function Begin(props) {
       {!loginScreen && (
         <div className={styles.modal}>
           <div className={styles.modalContainer}>
-            <h1>Login to Your Account</h1>
+            <h6>Login</h6>
             <form>
               <input
                 className={styles.username}
