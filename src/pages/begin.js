@@ -28,6 +28,7 @@ function Begin(props) {
   const [loading, setLoading] = useState(false)
   const { authenticated, setAuthenticated } = useAppContext()
   const [loginScreen, setLoginScreen] = useState()
+  const [openedEye, setOpenedEye] = useState(false)
 
   const handleStart = () => {
     setStart(rules.size > 0)
@@ -47,6 +48,12 @@ function Begin(props) {
       setUsername('')
       setPassword('')
     }, 1500)
+  }
+
+  const handleEye = () => {
+    const input = document.querySelector('#password')
+    setOpenedEye(!openedEye)
+    input.type = input.type === 'text' ? 'password' : 'text'
   }
 
   useEffect(() => {
@@ -74,21 +81,29 @@ function Begin(props) {
             <h6>Login</h6>
             <form>
               <input
-                className={styles.username}
+                className={styles.usernameInput}
                 type="text"
                 name="user"
                 placeholder="Usuário"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
               />
-              <input
-                className={styles.password}
-                type="password"
-                name="pass"
-                placeholder="Senha"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
+              <div className={styles.password}>
+                <input
+                  className={styles.passwordInput}
+                  type="password"
+                  id="password"
+                  name="pass"
+                  placeholder="Senha"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                {openedEye ? (
+                  <i id="eye" onClick={handleEye} className="fas fa-eye-slash"></i>
+                ) : (
+                  <i id="eye" onClick={handleEye} className="far fa-eye"></i>
+                )}
+              </div>
               {loading ? (
                 <div className={styles.loaderContainer}>
                   <div className={styles.loader}></div>

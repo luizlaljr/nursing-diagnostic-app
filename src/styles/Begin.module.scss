@@ -204,8 +204,8 @@
   margin-bottom: 10px;
 }
 
-.username,
-.password {
+.usernameInput,
+.passwordInput {
   height: 36px;
   font-size: 16px;
   width: 100%;
@@ -213,13 +213,32 @@
   background: #fff;
   border: 1px solid #d9d9d9;
   border-top: 1px solid #c0c0c0;
-  /* border-radius: 2px; */
   padding: 0 8px;
   box-sizing: border-box;
 }
 
-.modalContainer .username:hover,
-.password:hover {
+.password {
+  position: relative;
+  i {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    z-index: 2000;
+    color: var(--primary-color);
+    opacity: .70;
+    text-shadow: none;
+  }
+
+  i:hover {
+    opacity: 1;
+    color: var(--final-color);
+  }
+}
+
+
+
+.modalContainer .usernameInput:hover,
+.passwordInput:hover {
   border: 1px solid #b9b9b9;
   border-top: 1px solid #a0a0a0;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
